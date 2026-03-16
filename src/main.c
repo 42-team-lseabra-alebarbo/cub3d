@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/16 17:25:13 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/16 19:11:10 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
+	(void)argc;
+	(void)argv;
 	return (EXIT_SUCCESS);
 }
