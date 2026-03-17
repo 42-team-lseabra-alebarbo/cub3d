@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/17 17:23:55 by lseabra-         ###   ########.fr       */
+/*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
+/*   Updated: 2026/03/17 18:07:16 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef MACROS_H
+# define MACROS_H
 
-# include "enums.h"
-# include "macros.h"
-# include "structs.h"
+// ft_get_next_line.c
+# define MAX_LINE_SIZE	100000
+# define BUFFER_SIZE	100
 
-t_result	ft_get_next_line(int fd, char line[MAX_LINE_SIZE + 1]);
-void		ft_put_error(char *program, char *target, char *message);
+// Errors
+# define ERR_PREFIX			"Error"
+# define ERR_SEP			": "
+# define ERR_FD_RANGE		"file descriptor must be between 0 and 1024"
+# define ERR_BUFFER_SIZE	"BUFFER_SIZE should be greater than 0"
+# define ERR_MAX_LINE_SIZE	"MAX_LINE_SIZE should be greater than 0"
 
 #endif

@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/03/16 19:10:54 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/03/17 17:42:47 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC_PATH	= src
 
 # Source files
 SRC	= $(addprefix $(SRC_PATH)/, \
+	ft_get_next_line.c \
+	ft_put_error.c \
 	main.c \
 )
 
@@ -43,7 +45,7 @@ OBJ	= $(addprefix $(BUILD_PATH)/, $(notdir $(SRC:.c=.o)))
 
 #Compiler and Flags
 CC		= cc
-C_FLAGS	= -Wall -Wextra -Werror
+C_FLAGS	= -Wall -Wextra -Werror -g
 INC		= -I$(INC_PATH)
 ASAN	= -fsanitize=address
 

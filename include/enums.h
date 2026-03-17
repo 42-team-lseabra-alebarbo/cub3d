@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/17 17:23:55 by lseabra-         ###   ########.fr       */
+/*   Created: 2026/03/17 11:05:37 by lseabra-          #+#    #+#             */
+/*   Updated: 2026/03/17 16:43:23 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef ENUMS_H
+# define ENUMS_H
 
-# include "enums.h"
-# include "macros.h"
-# include "structs.h"
+typedef enum e_bool
+{
+	FALSE,
+	TRUE
+}	t_bool;
 
-t_result	ft_get_next_line(int fd, char line[MAX_LINE_SIZE + 1]);
-void		ft_put_error(char *program, char *target, char *message);
+typedef enum e_result
+{
+	FAILURE = -1,
+	SUCCESS = 0
+}	t_result;
 
 #endif
