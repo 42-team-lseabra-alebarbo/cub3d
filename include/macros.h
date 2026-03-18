@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/17 18:07:16 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/18 12:35:33 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,19 @@
 # define MAX_LINE_SIZE	100000
 # define BUFFER_SIZE	100
 
+# define EXTENSION	".cub"
+
 // Errors
 # define ERR_PREFIX			"Error"
 # define ERR_SEP			": "
 # define ERR_FD_RANGE		"file descriptor must be between 0 and 1024"
 # define ERR_BUFFER_SIZE	"BUFFER_SIZE should be greater than 0"
 # define ERR_MAX_LINE_SIZE	"MAX_LINE_SIZE should be greater than 0"
+# define ERR_MISS_ARG		"missing argument: '*.cub' file"
+# define ERR_MISS_ARG		"missing argument: '*.cub' file"
+# define ERR_MANY_ARGS		"exactly one argument is required"
+# define ERR_INV_EXT		"file extension must be '.cub'"
+# define ERR_NO_FILENAME	"filename not passed"
+# define ERR_MISS_PARAM		"missing parameter"
 
 #endif

@@ -6,15 +6,16 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:08:22 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/17 17:44:42 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/18 12:29:23 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <stddef.h>
 
-static size_t	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	len;
 
