@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:18:59 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/19 11:56:06 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:58:15 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static t_result	ft_handle_inv_id(char *buffer)
 		return (FAILURE);
 	}
 	i = 0;
-	while(buffer[i] && buffer[i] != '\n' && buffer[i] != ' ')
+	while (buffer[i] && buffer[i] != '\n' && buffer[i] != ' ')
 		i++;
 	id = malloc((i + 1) * sizeof(char));
 	if (!id)
