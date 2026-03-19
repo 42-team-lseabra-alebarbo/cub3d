@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/19 15:00:33 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/19 18:28:54 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MACROS_H
 
 // ft_get_next_line.c
-# define MAX_LINE_SIZE	100000
+# define MAX_LINE_SIZE	1024
 # define BUFFER_SIZE	100
 
 # define EXTENSION	".cub"
