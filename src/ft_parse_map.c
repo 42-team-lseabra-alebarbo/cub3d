@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:12:26 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/25 16:34:19 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/26 13:39:04 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ static t_result	ft_validate_row_chars_and_spawn(t_map *map, size_t row)
 			map->player_spawn.direction = map->grid[row][col];
 		}
 		else if (is_spawn && map->player_spawn.row >= 0)
-			return (ft_p_err_ret(NULL, NULL, ERR_MULT_SPAWN, FAILURE));
+			return (ft_p_err_ret(NULL, NULL, ERR_MULT_SPAWN));
 		else if (!ft_is_space(map->grid[row][col])
 			&& !ft_str_has_char(map->grid[row][col], MAP_TILES))
 		{
-			return (ft_p_err_ret(NULL, map->grid[row], ERR_INV_C, FAILURE));
+			return (ft_p_err_ret(NULL, map->grid[row], ERR_INV_C));
 		}
 		col++;
 	}
@@ -77,10 +77,7 @@ static t_result	ft_get_clean_row(t_data *dt, size_t row)
 	size_t	len;
 
 	if (ft_get_next_line(dt->file_fd, dt->map.grid[row]) != SUCCESS)
-	{
-		ft_put_error("ft_get_clean_row()", "get_next_line()", NULL);
 		return (FAILURE);
-	}
 	len = ft_strlen(dt->map.grid[row]);
 	if (len > 1 && dt->map.grid[row][len - 1] == '\n')
 		dt->map.grid[row][len - 1] = '\0';

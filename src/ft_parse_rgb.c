@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 10:29:46 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/23 14:37:52 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/26 13:32:02 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static t_result	ft_atouc_rgb(t_surface *surf, t_u_char *component, size_t *i)
 	int		res;
 
 	if (!surf || !component || !i)
-		return (ft_p_err_ret("ft_atouc_rgb()", NULL, ERR_MISS_PARAM, FAILURE));
+		return (ft_p_err_ret("ft_atouc_rgb()", NULL, ERR_MISS_PARAM));
 	else if (surf->rgb_str[*i] == '\0')
-		return (ft_p_err_ret(NULL, ERR_MISS_PARAM, ERR_MISS_RGB_COMP, FAILURE));
+		return (ft_p_err_ret(NULL, ERR_MISS_PARAM, ERR_MISS_RGB_COMP));
 	else if (surf->rgb_str[*i] == '-')
-		return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB, FAILURE));
+		return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB));
 	else if (surf->rgb_str[*i] == '+')
 		(*i)++;
 	res = 0;
@@ -37,11 +37,11 @@ static t_result	ft_atouc_rgb(t_surface *surf, t_u_char *component, size_t *i)
 	{
 		res = (res * 10) + (surf->rgb_str[*i] - '0');
 		if (res > 255)
-			return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB, FAILURE));
+			return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB));
 		(*i)++;
 	}
 	if (surf->rgb_str[*i] != ',' && surf->rgb_str[*i] != '\0')
-		return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB, FAILURE));
+		return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB));
 	*component = (t_u_char)(res);
 	return (SUCCESS);
 }

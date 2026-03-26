@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:08:22 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/23 12:12:55 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/26 13:31:19 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	ft_put_error(char *pgm, char *tgt, char *msg)
 	write(STDERR_FILENO, "\n", 1);
 }
 
-int	ft_p_err_ret(char *pgm, char *tgt, char *msg, int ret)
+int	ft_p_err_ret(char *pgm, char *tgt, char *msg)
 {
 	ft_put_error(pgm, tgt, msg);
-	return (ret);
+	return (FAILURE);
 }
