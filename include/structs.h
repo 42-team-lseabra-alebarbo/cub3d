@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:06:19 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/27 17:08:15 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/27 20:01:12 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_spawn
 
 typedef struct s_map
 {
-	char		grid[MAX_MAP_ROWS][MAX_LINE_SIZE];
+	char		grid[MAX_MAP_ROWS][MAX_MAP_COLS];
 	t_spawn		player_spawn;
 	int			row_count;
 }	t_map;

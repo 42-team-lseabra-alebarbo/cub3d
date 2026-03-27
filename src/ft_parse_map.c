@@ -6,39 +6,50 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:12:26 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/27 18:32:29 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/27 20:51:51 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static t_result	ft_get_clean_row(t_data *dt, size_t row)
+static t_result	ft_get_clean_map_row(t_data *dt, size_t row)
 {
-	size_t	len;
+	char	line[MAX_LINE_SIZE];
+	size_t	i;
 
-	if (ft_get_next_line(dt->file_fd, dt->map.grid[row]) != SUCCESS)
+	if (ft_get_next_line(dt->file_fd, line) != SUCCESS)
 		return (FAILURE);
-	len = ft_strlen(dt->map.grid[row]);
-	if (len > 1 && dt->map.grid[row][len - 1] == '\n')
-		dt->map.grid[row][len - 1] = '\0';
+	if (line[0] && row >= MAX_MAP_ROWS)
+		return (ft_p_err_ret(NULL, NULL, ERR_MAP_ROWS));
+	i = 0;
+	while (line[i])
+	{
+		if (i >= MAX_MAP_COLS)
+			return (ft_p_err_ret(NULL, NULL, ERR_MAP_COLS));
+		if (line[i] == '\n' && i > 0)
+			break ;
+		dt->map.grid[row][i] = line[i];
+		i++;
+	}
+	dt->map.grid[row][i] = '\0';
 	return (SUCCESS);
 }
 
 t_result	ft_parse_map(t_data *dt)
 {
-	size_t	i;
+	size_t	row;
 
 	dt->map.player_spawn.row = -1;
 	dt->map.player_spawn.col = -1;
-	i = 0;
-	if (ft_get_clean_row(dt, i) != SUCCESS)
+	row = 0;
+	if (ft_get_clean_map_row(dt, row) != SUCCESS)
 		return (FAILURE);
-	while (dt->map.grid[i++][0])
+	while (dt->map.grid[row++][0])
 	{
-		if (ft_get_clean_row(dt, i) != SUCCESS)
+		if (ft_get_clean_map_row(dt, row) != SUCCESS)
 			return (FAILURE);
 	}
-	dt->map.row_count = i;
+	dt->map.row_count = row;
 	if (ft_validate_map_content(&dt->map) != SUCCESS)
 		return (FAILURE);
 	else if (ft_validate_map_boundaries(dt->map) != SUCCESS)

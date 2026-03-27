@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/27 18:28:12 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/03/27 20:29:13 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define MACROS_H
 
 // ft_get_next_line.c
-# define MAX_MAP_ROWS	64
+# define MAX_MAP_ROWS	128
+# define MAX_MAP_COLS	128
 # define MAX_LINE_SIZE	512
 # define BUFFER_SIZE	128
 
@@ -40,7 +41,9 @@
 # define ERR_FD_RANGE		"file descriptor must be between 0 and 1024"
 # define ERR_BUFFER_SIZE	"BUFFER_SIZE should be greater than 0"
 # define ERR_MAX_LINE_SIZE	"MAX_LINE_SIZE should be greater than 0"
-# define ERR_LINE_SIZE		"Input line exceeds MAX_LINE_SIZE"
+# define ERR_LINE_SIZE		"input line exceeds MAX_LINE_SIZE"
+# define ERR_MAP_COLS		"input map exceeds columns limit (MAX_MAP_COLS - 1)"
+# define ERR_MAP_ROWS		"input map exceeds rows limit (MAX_MAP_ROWS - 1)"
 # define ERR_MISS_ARG_FILE	"missing argument: '*.cub' file"
 # define ERR_MANY_ARGS		"exactly one argument is required"
 # define ERR_INV_EXT		"file extension must be '.cub'"
