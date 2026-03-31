@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/03/27 18:31:04 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/03/31 15:12:32 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,14 @@ NAME		= cub3d
 PROJ_NAME	= CUB3D
 
 #Paths
-BUILD_PATH	= build
-INC_PATH	= include
-SRC_PATH	= src
+BUILD_PATH		= build
+INC_PATH		= include
+SRC_PATH		= src
+PARSING_PATH	= $(SRC_PATH)/parsing
 
 # Source files
-SRC	= $(addprefix $(SRC_PATH)/, \
+
+PARSING_SRC = $(addprefix $(PARSING_PATH)/, \
 	ft_get_next_line.c \
 	ft_init_surface.c \
 	ft_init_texture.c \
@@ -45,8 +47,11 @@ SRC	= $(addprefix $(SRC_PATH)/, \
 	ft_validate_arg.c \
 	ft_validate_map_boundaries.c \
 	ft_validate_map_content.c \
-	main.c \
 	str_utils.c \
+)
+
+SRC	= $(PARSING_SRC) $(addprefix $(SRC_PATH)/, \
+		main.c \
 )
 
 # Object files
@@ -75,6 +80,9 @@ $(NAME): $(OBJ)
 	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME)"
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.c | $(BUILD_PATH)
+	@$(CC) $(C_FLAGS) $(INC) -c $< -o $@
+
+$(BUILD_PATH)/%.o: $(PARSING_PATH)/%.c | $(BUILD_PATH)
 	@$(CC) $(C_FLAGS) $(INC) -c $< -o $@
 
 $(BUILD_PATH):
