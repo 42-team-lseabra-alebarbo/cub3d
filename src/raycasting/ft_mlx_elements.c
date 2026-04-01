@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/01 23:54:34 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 00:15:05 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	ft_open_window(t_graphics *graphics)
 
 int	ft_close_program(t_graphics *graphics)
 {
+	if (!graphics)
+	{
+		//PRINT ERROR MESSAGE
+		exit(FAILURE);
+	}
 	if (graphics->window)
 		mlx_destroy_window(graphics->mlx, graphics->window);
 	if (graphics->mlx)
@@ -50,10 +55,8 @@ int	ft_close_program(t_graphics *graphics)
 void	ft_game_loop(t_data *dt, t_graphics *graphics)
 {
 	if (!dt || !graphics)
-	{
-		// PRINT ERROR MESSAGE
-		exit(FAILURE);
-	}
+		ft_close_program(graphics);
 	mlx_hook(graphics->window, 17, 0L, ft_close_program, graphics);
+	mlx_hook(graphics->window, 2, 1L << 0, ft_key_events, graphics);
 	mlx_loop(graphics->mlx);
 }
