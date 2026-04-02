@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/01 23:53:13 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 18:00:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static t_result	ft_validate_macros(void)
 int	main(int argc, char *argv[])
 {
 	t_data		dt;
-	t_graphics	graphics;
 
 	dt = (t_data){};
 	if (ft_validate_macros() != SUCCESS
@@ -40,9 +39,8 @@ int	main(int argc, char *argv[])
 	{
 		return (EXIT_FAILURE);
 	}
-	graphics = (t_graphics){};
-	if (ft_open_window(&graphics) != SUCCESS)
+	if (ft_open_window(&dt) != SUCCESS)
 		return (EXIT_FAILURE);
-	ft_game_loop(&dt, &graphics);
+	ft_game_loop(&dt);
 	return (EXIT_SUCCESS);
 }

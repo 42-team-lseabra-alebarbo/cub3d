@@ -6,57 +6,57 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/02 00:15:05 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 18:02:14 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-int	ft_open_window(t_graphics *graphics)
+int	ft_open_window(t_data *dt)
 {
-	if (!graphics)
+	if (!dt)
 	{
 		// PRINT ERROR MESSAGE
 		return (FAILURE);
 	}
-	graphics->mlx = mlx_init();
-	if (!graphics->mlx)
+	dt->graphics.mlx = mlx_init();
+	if (!dt->graphics.mlx)
 	{
 		// PRINT ERROR MESSAGE
 		return (FAILURE);
 	}
-	graphics->window = mlx_new_window(graphics->mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d");
-	if (!graphics->window)
+	dt->graphics.window = mlx_new_window(dt->graphics.mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d");
+	if (!dt->graphics.window)
 	{
 		// PRINT ERROR MESSAGE
-		free(graphics->mlx);
+		free(dt->graphics.mlx);
 		return (FAILURE);
 	}
 	return (SUCCESS);
 }
 
-int	ft_close_program(t_graphics *graphics)
+int	ft_close_program(t_data *dt)
 {
-	if (!graphics)
+	if (!dt)
 	{
 		//PRINT ERROR MESSAGE
 		exit(FAILURE);
 	}
-	if (graphics->window)
-		mlx_destroy_window(graphics->mlx, graphics->window);
-	if (graphics->mlx)
+	if (dt->graphics.window)
+		mlx_destroy_window(dt->graphics.mlx, dt->graphics.window);
+	if (dt->graphics.mlx)
 	{
-		mlx_destroy_display(graphics->mlx);
-		free(graphics->mlx);
+		mlx_destroy_display(dt->graphics.mlx);
+		free(dt->graphics.mlx);
 	}
 	exit(SUCCESS);
 }
 
-void	ft_game_loop(t_data *dt, t_graphics *graphics)
+void	ft_game_loop(t_data *dt)
 {
-	if (!dt || !graphics)
-		ft_close_program(graphics);
-	mlx_hook(graphics->window, 17, 0L, ft_close_program, graphics);
-	mlx_hook(graphics->window, 2, 1L << 0, ft_key_events, graphics);
-	mlx_loop(graphics->mlx);
+	if (!dt)
+		ft_close_program(dt);
+	mlx_hook(dt->graphics.window, 17, 0L, ft_close_program, dt);
+	mlx_hook(dt->graphics.window, 2, 1L << 0, ft_key_events, dt);
+	mlx_loop(dt->graphics.mlx);
 }

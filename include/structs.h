@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:06:19 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/01 23:23:57 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:56:54 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,19 @@ typedef struct s_map
 	int			row_count;
 }	t_map;
 
+typedef struct s_graphics
+{
+	void	*mlx;
+	void	*window;
+}	t_graphics;
+
 typedef struct s_data
 {
 	t_fd		file_fd;
 	t_texture	textures[4];
 	t_surface	surfaces[2];
 	t_map		map;
+	t_graphics	graphics;
 }	t_data;
 
 typedef struct s_gnl_state
@@ -69,11 +76,5 @@ typedef struct s_gnl_state
 	int		buf_pos;
 	int		buf_len;
 }	t_gnl_state;
-
-typedef struct s_graphics
-{
-	void	*mlx;
-	void	*window;
-}	t_graphics;
 
 #endif

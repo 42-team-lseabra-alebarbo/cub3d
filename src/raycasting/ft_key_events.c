@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:05:29 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/02 00:12:36 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 17:50:04 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 int	ft_key_events(int keycode, void *param)
 {
-	t_graphics	*graphics;
+	t_data	*dt;
 
-	graphics = param;
-	if (!graphics)
-	{
-		//PRINT ERROR MESSAGE
-		ft_close_program(graphics);
-	}
+	dt = param;
+	if (!dt)
+		ft_close_program(dt);
 	if (keycode == KEY_ESC)
-		ft_close_program(graphics);
+		ft_close_program(dt);
 	return (SUCCESS);
 }

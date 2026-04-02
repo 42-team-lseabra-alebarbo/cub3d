@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/02 00:11:33 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 18:00:24 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ t_result	ft_validate_map_content(t_map *map);
 size_t		ft_strlen(char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-int			ft_open_window(t_graphics *graphics);
-int			ft_close_program(t_graphics *graphics);
-void		ft_game_loop(t_data *dt, t_graphics *graphics);
+int			ft_open_window(t_data *dt);
+int			ft_close_program(t_data *dt);
+void		ft_game_loop(t_data *dt);
 int			ft_key_events(int keycode, void *param);
 
 #endif
