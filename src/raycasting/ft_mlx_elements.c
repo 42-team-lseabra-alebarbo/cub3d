@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/02 22:34:28 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/02 23:06:28 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_open_window(t_data *dt)
 		// PRINT ERROR MESSAGE
 		return (FAILURE);
 	}
-	dt->graphics.window = mlx_new_window(dt->graphics.mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d");
+	dt->graphics.window
+		= mlx_new_window(dt->graphics.mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d");
 	if (!dt->graphics.window)
 	{
 		// PRINT ERROR MESSAGE
