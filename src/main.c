@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/02 23:28:13 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/06 12:00:57 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static t_result	ft_validate_macros(void)
 	else if (MAX_LINE_SIZE <= 0)
 	{
 		ft_put_error(NULL, NULL, ERR_MAX_LINE_SIZE);
+		return (FAILURE);
+	}
+	else if (WIN_WIDTH < 640 || WIN_WIDTH > 1920)
+	{
+		ft_put_error(NULL, "WIN_WIDTH", "macro must be in range (640-1920)");
+		return (FAILURE);
+	}
+	else if (WIN_HEIGHT < 480 || WIN_HEIGHT > 1080)
+	{
+		ft_put_error(NULL, "WIN_HEIGHT", "macro must be in range (480-1080)");
 		return (FAILURE);
 	}
 	else

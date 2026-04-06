@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/06 11:44:09 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/06 11:54:46 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@
 # define ERR_NO_SPAWN		"no spawn detected"
 # define ERR_INV_C			"invalid character detected"
 # define ERR_MAP_OPEN		"map has invalid or unreachable areas"
+# define ERR_WIN_WIDTH		"WIN_WIDTH must be between "
 
 #endif
