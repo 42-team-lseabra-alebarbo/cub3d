@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mlx_elements.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/02 23:06:28 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/06 11:47:56 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ int	ft_open_window(t_data *dt)
 {
 	if (!dt)
 	{
-		// PRINT ERROR MESSAGE
+		ft_put_error("ft_open_window()", "dt", ERR_MISS_PARAM);
 		return (FAILURE);
 	}
 	dt->graphics.mlx = mlx_init();
 	if (!dt->graphics.mlx)
 	{
-		// PRINT ERROR MESSAGE
+		ft_put_error("ft_open_window()", "dt->graphics.mlx", ERR_MISS_VAR);
 		return (FAILURE);
 	}
 	dt->graphics.window
 		= mlx_new_window(dt->graphics.mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d");
 	if (!dt->graphics.window)
 	{
-		// PRINT ERROR MESSAGE
+		ft_put_error("ft_open_window()", "dt->graphics.window", ERR_MISS_VAR);
 		free(dt->graphics.mlx);
 		return (FAILURE);
 	}
@@ -40,7 +40,7 @@ int	ft_close_program(t_data *dt)
 {
 	if (!dt)
 	{
-		//PRINT ERROR MESSAGE
+		ft_put_error("ft_close_program()", "dt", ERR_MISS_PARAM);
 		exit(FAILURE);
 	}
 	if (dt->graphics.floor.img)

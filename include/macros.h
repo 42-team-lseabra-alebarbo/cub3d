@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/02 21:42:31 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/06 11:44:09 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@
 # define ERR_INV_EXT		"file extension must be '.cub'"
 # define ERR_NO_FILENAME	"filename not passed"
 # define ERR_MISS_PARAM		"missing parameter"
+# define ERR_MISS_VAR		"missing variable"
 # define ERR_INV_ID			"invalid information identifier"
 # define ERR_NOT_TEXTURE	"argument is not a texture"
 # define ERR_DUP_ID			"duplicated identifier"
