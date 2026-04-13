@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 19:33:22 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 20:25:28 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ static void	ft_set_camera(t_data *dt)
 {
 	if (dt->map.player_spawn.direction == 'N')
 	{
-		dt->player.dir_y = -1.00;
-		dt->player.plane_x = 0.66;
-	}
-	if (dt->map.player_spawn.direction == 'S')
-	{
 		dt->player.dir_y = 1.00;
 		dt->player.plane_x = -0.66;
 	}
-	if (dt->map.player_spawn.direction == 'E')
+	if (dt->map.player_spawn.direction == 'S')
 	{
-		dt->player.dir_x = 1.00;
-		dt->player.plane_y = 0.66;
+		dt->player.dir_y = -1.00;
+		dt->player.plane_x = 0.66;
 	}
-	if (dt->map.player_spawn.direction == 'W')
+	if (dt->map.player_spawn.direction == 'E')
 	{
 		dt->player.dir_x = -1.00;
 		dt->player.plane_y = -0.66;
+	}
+	if (dt->map.player_spawn.direction == 'W')
+	{
+		dt->player.dir_x = 1.00;
+		dt->player.plane_y = 0.66;
 	}
 }
 
@@ -40,8 +40,8 @@ void	ft_init_player(t_data *dt)
 {
 	dt->player.pos_x = dt->map.player_spawn.col;
 	dt->player.pos_y = dt->map.player_spawn.row;
-	dt->player.sens = 0.1;
-	dt->player.speed = 0.05;
+	dt->player.sens = 0.03;
+	dt->player.speed = 0.03;
 	dt->player.cam_height = 1.0;
 	ft_set_camera(dt);
 }
