@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
+#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/04 19:23:34 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/13 15:57:34 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,9 +54,14 @@ PARSING_SRC	= $(addprefix $(PARSING_PATH)/, \
 )
 
 RAYCASTING_SRC	= $(addprefix $(RAYCASTING_PATH)/, \
-	ft_mlx_elements.c \
+	ft_draw_line.c \
+	ft_draw_textures.c \
+	ft_game_loop.c \
+	ft_init_player_cam.c \
 	ft_key_events.c \
-	ft_put_pixel.c \
+	ft_mlx_elements.c \
+	ft_raycaster.c \
+	ft_texture_to_img.c \
 )
 
 SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \

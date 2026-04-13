@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mlx_elements.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/06 11:47:56 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:14:25 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,16 @@ int	ft_close_program(t_data *dt)
 		ft_put_error("ft_close_program()", "dt", ERR_MISS_PARAM);
 		exit(FAILURE);
 	}
-	if (dt->graphics.floor.img)
-		mlx_destroy_image(dt->graphics.mlx, dt->graphics.floor.img);
-	if (dt->graphics.ceiling.img)
-		mlx_destroy_image(dt->graphics.mlx, dt->graphics.ceiling.img);
+	if (dt->graphics.textures[NO].img)
+		mlx_destroy_image(dt->graphics.mlx, dt->graphics.textures[NO].img);
+	if (dt->graphics.textures[SO].img)
+		mlx_destroy_image(dt->graphics.mlx, dt->graphics.textures[SO].img);
+	if (dt->graphics.textures[EA].img)
+		mlx_destroy_image(dt->graphics.mlx, dt->graphics.textures[EA].img);
+	if (dt->graphics.textures[WE].img)
+		mlx_destroy_image(dt->graphics.mlx, dt->graphics.textures[WE].img);
+	if (dt->graphics.game_image.img)
+		mlx_destroy_image(dt->graphics.mlx, dt->graphics.game_image.img);
 	if (dt->graphics.window)
 		mlx_destroy_window(dt->graphics.mlx, dt->graphics.window);
 	if (dt->graphics.mlx)
@@ -55,15 +61,4 @@ int	ft_close_program(t_data *dt)
 		free(dt->graphics.mlx);
 	}
 	exit(SUCCESS);
-}
-
-void	ft_game_loop(t_data *dt)
-{
-	if (!dt)
-		ft_close_program(dt);
-	ft_floor_img(dt);
-	ft_ceiling_img(dt);
-	mlx_hook(dt->graphics.window, 17, 0L, ft_close_program, dt);
-	mlx_hook(dt->graphics.window, 2, 1L << 0, ft_key_events, dt);
-	mlx_loop(dt->graphics.mlx);
 }
