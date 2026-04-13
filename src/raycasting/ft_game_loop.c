@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:39:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 16:18:25 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 16:35:49 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static int	ft_render(void *param)
 	dt->cam.curr_x = 0;
 	while (dt->cam.curr_x < WIN_WIDTH)
 		ft_raycaster(dt);
-	mlx_put_image_to_window(dt->graphics.mlx, dt->graphics.window, dt->graphics.game_image.img, 0, 0);
+	mlx_put_image_to_window(dt->graphics.mlx, dt->graphics.window,
+		dt->graphics.game_image.img, 0, 0);
 	// ft_events(dt);
 	return (SUCCESS);
 }
