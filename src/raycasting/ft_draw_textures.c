@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:47:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 16:37:17 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 20:01:55 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ static void	ft_texture_cont(t_data *dt, t_img *img)
 		dt->line.y--;
 		while (dt->line.y < y_max)
 		{
-			ft_put_texture(dt, img);
 			dt->line.y++;
+			ft_put_texture(dt, img);
 		}
 	}
 }
