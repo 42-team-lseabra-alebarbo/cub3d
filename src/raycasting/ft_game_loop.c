@@ -19,9 +19,9 @@ static int	ft_render(void *param)
 	dt = (t_data *) param;
 	if (!dt)
 		ft_close_program(dt);
-	// mlx_mouse_hide(dt->graphics.mlx, dt->graphics.window);
-	// mlx_mouse_move(dt->graphics.mlx, dt->graphics.window,
-	// 	WIN_WIDTH / 2, WIN_HEIGHT / 2);
+	mlx_mouse_hide(dt->graphics.mlx, dt->graphics.window);
+	mlx_mouse_move(dt->graphics.mlx, dt->graphics.window,
+		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	dt->cam.curr_x = 0;
 	while (dt->cam.curr_x < WIN_WIDTH)
 		ft_raycaster(dt);

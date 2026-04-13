@@ -20,10 +20,9 @@ int	ft_mouse_move(int x, int y, void *param)
 	if (!dt)
 		ft_close_program(dt);
 	(void) y;
-	if (x < dt->control.mouse_x)
+	if (x < WIN_WIDTH / 2)
 		ft_turn_left(dt);
-	if (x > dt->control.mouse_x)
+	if (x > WIN_WIDTH / 2)
 		ft_turn_right(dt);
-	dt->control.mouse_x = x;
 	return (SUCCESS);
 }
