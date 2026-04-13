@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 17:40:37 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:16:11 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main(int argc, char *argv[])
 	}
 	if (ft_open_window(&dt) != SUCCESS)
 		return (EXIT_FAILURE);
+	ft_game_image(&dt);
 	ft_texture_to_img(&dt);
 	ft_init_player(&dt);
 	ft_init_controls(&dt);

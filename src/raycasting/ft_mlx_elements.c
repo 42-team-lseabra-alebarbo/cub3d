@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 22:41:07 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 16:14:25 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:16:01 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,19 @@ int	ft_close_program(t_data *dt)
 		free(dt->graphics.mlx);
 	}
 	exit(SUCCESS);
+}
+
+void	ft_game_image(t_data *dt)
+{
+	dt->graphics.game_image.img
+		= mlx_new_image(dt->graphics.mlx, WIN_WIDTH, WIN_HEIGHT);
+	if (!dt->graphics.game_image.img)
+		ft_close_program(dt);
+	dt->graphics.game_image.width = WIN_WIDTH;
+	dt->graphics.game_image.height = WIN_HEIGHT;
+	dt->graphics.game_image.addr
+		= mlx_get_data_addr(dt->graphics.game_image.img,
+		&dt->graphics.game_image.bits_per_pixel,
+		&dt->graphics.game_image.line_length,
+		&dt->graphics.game_image.endian);
 }

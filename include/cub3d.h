@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 17:57:08 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:16:54 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_open_window(t_data *dt);
 int			ft_close_program(t_data *dt);
+void		ft_game_image(t_data *dt);
 void		ft_game_loop(t_data *dt);
 void		ft_events(t_data *dt);
 int			ft_key_press(int keycode, void *param);
