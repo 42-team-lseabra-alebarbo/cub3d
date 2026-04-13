@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:06:19 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 16:08:11 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:27:37 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,15 @@ typedef struct s_line
 	int		tex_y;
 }	t_line;
 
+typedef struct s_control
+{
+	int		move_left;
+	int		move_right;
+	int		move_forward;
+	int		move_backward;
+	int		turn_left;
+	int		turn_right;
+}	t_control;
 
 typedef struct s_player
 {
@@ -129,6 +138,7 @@ typedef struct s_data
 	t_map		map;
 	t_graphics	graphics;
 	t_line		line;
+	t_control	control;
 	t_player	player;
 	t_cam		cam;
 }	t_data;

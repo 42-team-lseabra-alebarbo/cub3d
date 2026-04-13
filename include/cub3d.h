@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 16:05:05 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:57:08 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,21 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_open_window(t_data *dt);
 int			ft_close_program(t_data *dt);
 void		ft_game_loop(t_data *dt);
-int			ft_key_events(int keycode, void *param);
+void		ft_events(t_data *dt);
+int			ft_key_press(int keycode, void *param);
+int			ft_key_release(int keycode, void *param);
+void		ft_init_player(t_data *dt);
+void		ft_init_controls(t_data *dt);
 void		ft_texture_to_img(t_data *dt);
 void		ft_raycaster(t_data *dt);
-void		ft_init_player_cam(t_data *dt);
+void		ft_init_cam(t_data *dt);
 void		ft_draw_textures(t_data *dt);
 void		ft_draw_line(t_data *dt, t_rgb rgb);
+void		ft_turn_left(t_data *dt);
+void		ft_turn_right(t_data *dt);
+void		ft_move_left(t_data *dt);
+void		ft_move_right(t_data *dt);
+void		ft_move_forward(t_data *dt);
+void		ft_move_backward(t_data *dt);
 
 #endif

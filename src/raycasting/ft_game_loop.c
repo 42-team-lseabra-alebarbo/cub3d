@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:39:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 16:35:49 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:46:14 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_render(void *param)
 		ft_raycaster(dt);
 	mlx_put_image_to_window(dt->graphics.mlx, dt->graphics.window,
 		dt->graphics.game_image.img, 0, 0);
-	// ft_events(dt);
+	ft_events(dt);
 	return (SUCCESS);
 }
 
@@ -33,7 +33,8 @@ void	ft_game_loop(t_data *dt)
 	if (!dt)
 		ft_close_program(dt);
 	mlx_hook(dt->graphics.window, 17, 0L, ft_close_program, dt);
-	mlx_hook(dt->graphics.window, 2, 1L << 0, ft_key_events, dt);
+	mlx_hook(dt->graphics.window, 2, 1L << 0, ft_key_press, dt);
+	mlx_hook(dt->graphics.window, 3, 1L << 1, ft_key_release, dt);
 	mlx_loop_hook(dt->graphics.mlx, ft_render, dt);
 	mlx_loop(dt->graphics.mlx);
 }

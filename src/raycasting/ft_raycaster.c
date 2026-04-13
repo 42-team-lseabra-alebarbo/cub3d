@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 01:12:08 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 16:35:40 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:16:07 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	ft_calculate_perp(t_data *dt)
 
 void	ft_raycaster(t_data *dt)
 {
-	ft_init_player_cam(dt);
+	ft_init_cam(dt);
 	ft_calculate_step(dt);
 	ft_calculate_dist(dt);
 	ft_calculate_perp(dt);

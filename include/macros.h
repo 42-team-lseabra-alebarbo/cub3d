@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/06 11:54:46 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:13:22 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,13 @@
 # define WIN_HEIGHT	720
 
 // Keys
-# define KEY_ESC	0xff1b
+# define KEY_ESC		0xff1b
+# define W_KEY			0x77
+# define A_KEY			0x61
+# define S_KEY			0x73
+# define D_KEY			0x64
+# define LEFT_ARROW		0xff51
+# define RIGHT_ARROW	0xff53
 
 // Errors
 # define ERR_PREFIX			"Error"

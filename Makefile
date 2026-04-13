@@ -6,7 +6,7 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/13 15:57:34 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/13 18:08:13 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,11 +57,13 @@ RAYCASTING_SRC	= $(addprefix $(RAYCASTING_PATH)/, \
 	ft_draw_line.c \
 	ft_draw_textures.c \
 	ft_game_loop.c \
-	ft_init_player_cam.c \
+	ft_init_game.c \
 	ft_key_events.c \
 	ft_mlx_elements.c \
+	ft_move_player.c \
 	ft_raycaster.c \
 	ft_texture_to_img.c \
+	ft_turn_player.c \
 )
 
 SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \
