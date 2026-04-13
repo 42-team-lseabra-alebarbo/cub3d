@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 01:12:08 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 17:16:07 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 19:50:53 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static void	ft_calculate_perp(t_data *dt)
 	dt->cam.line_height = WIN_HEIGHT / dt->cam.perp_dist;
 	dt->cam.draw_start = (dt->cam.line_height * -1) / 2
 		+ ((WIN_HEIGHT / 2) * dt->player.cam_height);
-	if (dt->cam.draw_start < 0)
+	if (dt->cam.draw_start <= 0)
 		dt->cam.draw_start = 0;
 	dt->cam.draw_end = dt->cam.line_height / 2
 		+ ((WIN_HEIGHT / 2) * dt->player.cam_height);
