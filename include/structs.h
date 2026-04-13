@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:06:19 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 17:27:37 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:50:09 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ typedef struct s_control
 	int		move_backward;
 	int		turn_left;
 	int		turn_right;
+	int		mouse_x;
+	int		mouse_y;
 }	t_control;
 
 typedef struct s_player

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 20:25:28 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 23:07:57 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_init_controls(t_data *dt)
 	dt->control.move_right = 0;
 	dt->control.move_forward = 0;
 	dt->control.move_backward = 0;
+	dt->control.mouse_x = WIN_WIDTH / 2;
 }
 
 void	ft_init_cam(t_data *dt)

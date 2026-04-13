@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 19:16:54 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:30:24 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void		ft_move_left(t_data *dt);
 void		ft_move_right(t_data *dt);
 void		ft_move_forward(t_data *dt);
 void		ft_move_backward(t_data *dt);
+int			ft_mouse_move(int x, int y, void *param);
 
 #endif
