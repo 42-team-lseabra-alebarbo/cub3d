@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 23:07:57 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/14 13:57:00 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
+// Is it interesting to use MACROS?
 static void	ft_set_camera(t_data *dt)
 {
 	if (dt->map.player_spawn.direction == 'N')
@@ -19,17 +20,17 @@ static void	ft_set_camera(t_data *dt)
 		dt->player.dir_y = 1.00;
 		dt->player.plane_x = -0.66;
 	}
-	if (dt->map.player_spawn.direction == 'S')
+	else if (dt->map.player_spawn.direction == 'S')
 	{
 		dt->player.dir_y = -1.00;
 		dt->player.plane_x = 0.66;
 	}
-	if (dt->map.player_spawn.direction == 'E')
+	else if (dt->map.player_spawn.direction == 'E')
 	{
 		dt->player.dir_x = -1.00;
 		dt->player.plane_y = -0.66;
 	}
-	if (dt->map.player_spawn.direction == 'W')
+	else if (dt->map.player_spawn.direction == 'W')
 	{
 		dt->player.dir_x = 1.00;
 		dt->player.plane_y = 0.66;
@@ -55,6 +56,7 @@ void	ft_init_controls(t_data *dt)
 	dt->control.move_forward = 0;
 	dt->control.move_backward = 0;
 	dt->control.mouse_x = WIN_WIDTH / 2;
+	// Why don't initialize mose_y?
 }
 
 void	ft_init_cam(t_data *dt)
