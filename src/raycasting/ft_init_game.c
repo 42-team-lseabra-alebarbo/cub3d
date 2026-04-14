@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/14 14:34:44 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:42:11 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ static void	ft_set_camera(t_data *dt)
 {
 	if (dt->map.player_spawn.direction == 'N')
 	{
-		dt->player.dir_y = 1.00;
-		dt->player.plane_x = -0.66;
-	}
-	else if (dt->map.player_spawn.direction == 'S')
-	{
 		dt->player.dir_y = -1.00;
 		dt->player.plane_x = 0.66;
 	}
-	else if (dt->map.player_spawn.direction == 'E')
+	else if (dt->map.player_spawn.direction == 'S')
 	{
-		dt->player.dir_x = -1.00;
-		dt->player.plane_y = -0.66;
+		dt->player.dir_y = 1.00;
+		dt->player.plane_x = -0.66;
 	}
-	else if (dt->map.player_spawn.direction == 'W')
+	else if (dt->map.player_spawn.direction == 'E')
 	{
 		dt->player.dir_x = 1.00;
 		dt->player.plane_y = 0.66;
+	}
+	else if (dt->map.player_spawn.direction == 'W')
+	{
+		dt->player.dir_x = -1.00;
+		dt->player.plane_y = -0.66;
 	}
 }
 
