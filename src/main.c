@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 22:55:26 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:34:51 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char *argv[])
 	ft_game_image(&dt);
 	ft_texture_to_img(&dt);
 	ft_init_player(&dt);
-	ft_init_controls(&dt);
 	ft_game_loop(&dt);
 	return (EXIT_SUCCESS);
 }

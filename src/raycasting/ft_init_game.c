@@ -6,13 +6,12 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/14 13:57:00 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:34:44 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-// Is it interesting to use MACROS?
 static void	ft_set_camera(t_data *dt)
 {
 	if (dt->map.player_spawn.direction == 'N')
@@ -45,18 +44,6 @@ void	ft_init_player(t_data *dt)
 	dt->player.speed = 0.03;
 	dt->player.cam_height = 1.0;
 	ft_set_camera(dt);
-}
-
-void	ft_init_controls(t_data *dt)
-{
-	dt->control.turn_left = 0;
-	dt->control.turn_right = 0;
-	dt->control.move_left = 0;
-	dt->control.move_right = 0;
-	dt->control.move_forward = 0;
-	dt->control.move_backward = 0;
-	dt->control.mouse_x = WIN_WIDTH / 2;
-	// Why don't initialize mose_y?
 }
 
 void	ft_init_cam(t_data *dt)
