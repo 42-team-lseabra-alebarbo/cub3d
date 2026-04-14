@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/27 20:29:13 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:13:22 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,19 @@
 # define DIRECTIONS	"NSEW"
 # define MAP_TILES	"01"
 
+// Graphics
+# define WIN_WIDTH	1024
+# define WIN_HEIGHT	720
+
+// Keys
+# define KEY_ESC		0xff1b
+# define W_KEY			0x77
+# define A_KEY			0x61
+# define S_KEY			0x73
+# define D_KEY			0x64
+# define LEFT_ARROW		0xff51
+# define RIGHT_ARROW	0xff53
+
 // Errors
 # define ERR_PREFIX			"Error"
 # define ERR_SEP			": "
@@ -49,6 +62,7 @@
 # define ERR_INV_EXT		"file extension must be '.cub'"
 # define ERR_NO_FILENAME	"filename not passed"
 # define ERR_MISS_PARAM		"missing parameter"
+# define ERR_MISS_VAR		"missing variable"
 # define ERR_INV_ID			"invalid information identifier"
 # define ERR_NOT_TEXTURE	"argument is not a texture"
 # define ERR_DUP_ID			"duplicated identifier"
@@ -60,5 +74,6 @@
 # define ERR_NO_SPAWN		"no spawn detected"
 # define ERR_INV_C			"invalid character detected"
 # define ERR_MAP_OPEN		"map has invalid or unreachable areas"
+# define ERR_WIN_WIDTH		"WIN_WIDTH must be between "
 
 #endif

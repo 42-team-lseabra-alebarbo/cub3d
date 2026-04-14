@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/18 16:28:45 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/13 22:55:26 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
 #include "cub3d.h"
 
 static t_result	ft_validate_macros(void)
@@ -27,13 +24,23 @@ static t_result	ft_validate_macros(void)
 		ft_put_error(NULL, NULL, ERR_MAX_LINE_SIZE);
 		return (FAILURE);
 	}
+	else if (WIN_WIDTH < 640 || WIN_WIDTH > 1920)
+	{
+		ft_put_error(NULL, "WIN_WIDTH", "macro must be in range (640-1920)");
+		return (FAILURE);
+	}
+	else if (WIN_HEIGHT < 480 || WIN_HEIGHT > 1080)
+	{
+		ft_put_error(NULL, "WIN_HEIGHT", "macro must be in range (480-1080)");
+		return (FAILURE);
+	}
 	else
 		return (SUCCESS);
 }
 
 int	main(int argc, char *argv[])
 {
-	t_data	dt;
+	t_data		dt;
 
 	dt = (t_data){};
 	if (ft_validate_macros() != SUCCESS
@@ -42,5 +49,12 @@ int	main(int argc, char *argv[])
 	{
 		return (EXIT_FAILURE);
 	}
+	if (ft_open_window(&dt) != SUCCESS)
+		return (EXIT_FAILURE);
+	ft_game_image(&dt);
+	ft_texture_to_img(&dt);
+	ft_init_player(&dt);
+	ft_init_controls(&dt);
+	ft_game_loop(&dt);
 	return (EXIT_SUCCESS);
 }
