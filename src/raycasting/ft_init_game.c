@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/14 14:42:11 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/14 19:08:50 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	ft_init_player(t_data *dt)
 {
 	dt->player.pos_x = dt->map.player_spawn.col;
 	dt->player.pos_y = dt->map.player_spawn.row;
-	dt->player.sens = 0.03;
-	dt->player.speed = 0.03;
+	dt->player.sens = SENS;
+	dt->player.speed = SPEED;
 	dt->player.cam_height = 1.0;
 	ft_set_camera(dt);
 }
