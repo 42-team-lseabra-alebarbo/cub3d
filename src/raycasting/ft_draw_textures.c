@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:47:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 20:01:55 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/15 21:46:43 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ static void	ft_put_texture(t_data *dt, t_img *img)
 		+ dt->cam.line_height * img->line_length / 2;
 	dt->line.tex_y = ((scale * img->height) / dt->cam.line_height)
 		/ img->line_length;
+	if (dt->line.tex_y * img->line_length + dt->line.tex_x
+		* (img->bits_per_pixel / 8) < 0)
+		return ;
 	dt->graphics.game_image.addr[dt->line.y
 		* dt->graphics.game_image.line_length + dt->line.x
 		* (dt->graphics.game_image.bits_per_pixel / 8)]
