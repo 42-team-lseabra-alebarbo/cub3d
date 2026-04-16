@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 17:13:22 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/14 19:14:17 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@
 // Graphics
 # define WIN_WIDTH	1024
 # define WIN_HEIGHT	720
+
+// Player
+# define SENS 0.03
+# define SPEED 0.03
 
 // Keys
 # define KEY_ESC		0xff1b

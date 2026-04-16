@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:39:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 23:08:22 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:30:08 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	ft_render(void *param)
 	dt = (t_data *) param;
 	if (!dt)
 		ft_close_program(dt);
-	mlx_mouse_hide(dt->graphics.mlx, dt->graphics.window);
 	mlx_mouse_move(dt->graphics.mlx, dt->graphics.window,
 		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	dt->cam.curr_x = 0;

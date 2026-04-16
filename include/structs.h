@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:06:19 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 22:50:09 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:51:38 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,6 @@ typedef struct s_control
 	int		move_backward;
 	int		turn_left;
 	int		turn_right;
-	int		mouse_x;
-	int		mouse_y;
 }	t_control;
 
 typedef struct s_player
@@ -106,8 +104,6 @@ typedef struct s_player
 	double	plane_x;
 	double	plane_y;
 	double	cam_height;
-	double	speed;
-	double	sens;
 }	t_player;
 
 typedef struct s_cam

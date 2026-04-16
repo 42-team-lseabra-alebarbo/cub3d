@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 17:46:28 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 17:56:18 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:53:33 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	ft_turn_left(t_data *dt)
 
 	dir_x = dt->player.dir_x;
 	plane_x = dt->player.plane_x;
-	dt->player.dir_x = dt->player.dir_x * cos(dt->player.sens * -1)
-		- dt->player.dir_y * sin(dt->player.sens * -1);
-	dt->player.dir_y = dir_x * sin(dt->player.sens * -1)
-		+ dt->player.dir_y * cos(dt->player.sens * -1);
-	dt->player.plane_x = dt->player.plane_x * cos(dt->player.sens * -1)
-		- dt->player.plane_y * sin(dt->player.sens * -1);
-	dt->player.plane_y = plane_x * sin(dt->player.sens * -1)
-		+ dt->player.plane_y * cos(dt->player.sens * -1);
+	dt->player.dir_x = dt->player.dir_x * cos(SENS * -1)
+		- dt->player.dir_y * sin(SENS * -1);
+	dt->player.dir_y = dir_x * sin(SENS * -1)
+		+ dt->player.dir_y * cos(SENS * -1);
+	dt->player.plane_x = dt->player.plane_x * cos(SENS * -1)
+		- dt->player.plane_y * sin(SENS * -1);
+	dt->player.plane_y = plane_x * sin(SENS * -1)
+		+ dt->player.plane_y * cos(SENS * -1);
 }
 
 void	ft_turn_right(t_data *dt)
@@ -36,12 +36,12 @@ void	ft_turn_right(t_data *dt)
 
 	dir_x = dt->player.dir_x;
 	plane_x = dt->player.plane_x;
-	dt->player.dir_x = dt->player.dir_x * cos(dt->player.sens * 1)
-		- dt->player.dir_y * sin(dt->player.sens * 1);
-	dt->player.dir_y = dir_x * sin(dt->player.sens * 1)
-		+ dt->player.dir_y * cos(dt->player.sens * 1);
-	dt->player.plane_x = dt->player.plane_x * cos(dt->player.sens * 1)
-		- dt->player.plane_y * sin(dt->player.sens * 1);
-	dt->player.plane_y = plane_x * sin(dt->player.sens * 1)
-		+ dt->player.plane_y * cos(dt->player.sens * 1);
+	dt->player.dir_x = dt->player.dir_x * cos(SENS * 1)
+		- dt->player.dir_y * sin(SENS * 1);
+	dt->player.dir_y = dir_x * sin(SENS * 1)
+		+ dt->player.dir_y * cos(SENS * 1);
+	dt->player.plane_x = dt->player.plane_x * cos(SENS * 1)
+		- dt->player.plane_y * sin(SENS * 1);
+	dt->player.plane_y = plane_x * sin(SENS * 1)
+		+ dt->player.plane_y * cos(SENS * 1);
 }
