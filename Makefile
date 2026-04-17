@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/16 21:38:17 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/17 19:44:20 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,8 @@ SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \
 
 SRC_BONUS = $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_BONUS_PATH)/, \
 		main_bonus.c \
+		ft_game_loop_bonus.c \
+		ft_render_minimap.c \
 )
 
 # Object files
@@ -124,11 +126,11 @@ $(MLX_NAME):
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ_BONUS) $(MLX_NAME)
-	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $@
+	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $@ -g
 	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME_BONUS)"
 
 $(BUILD_PATH)/%.o: $(SRC_BONUS_PATH)/%.c | $(BUILD_PATH)
-	@$(CC) $(C_FLAGS) $(INC) -c $< -o $@
+	@$(CC) $(C_FLAGS) $(INC_BONUS) -c $< -o $@
 
 clean:
 	@if [ -d $(BUILD_PATH) ]; then \
