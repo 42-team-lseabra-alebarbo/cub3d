@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:43:43 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/13 19:47:23 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/17 19:09:30 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 static void	ft_put_pixel(t_data *dt, int y, t_rgb rgb)
 {
 	t_img	*img;
+	int		img_addr;
 
 	img = &dt->graphics.game_image;
-	img->addr[y * img->line_length + dt->line.x
-		* (img->bits_per_pixel / 8)] = rgb.b;
-	img->addr[y * img->line_length + dt->line.x
-		* (img->bits_per_pixel / 8) + 1] = rgb.g;
-	img->addr[y * img->line_length + dt->line.x
-		* (img->bits_per_pixel / 8) + 2] = rgb.r;
+	img_addr = y * img->line_length + dt->line.x * (img->bits_per_pixel / 8);
+	img->addr[img_addr] = rgb.b;
+	img->addr[img_addr + 1] = rgb.g;
+	img->addr[img_addr + 2] = rgb.r;
 }
 
 void	ft_draw_line(t_data *dt, t_rgb rgb)
