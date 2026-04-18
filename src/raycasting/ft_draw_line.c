@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:43:43 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/17 19:09:30 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/18 01:29:37 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	ft_put_pixel(t_data *dt, int y, t_rgb rgb)
 
 	img = &dt->graphics.game_image;
 	img_addr = y * img->line_length + dt->line.x * (img->bits_per_pixel / 8);
+	if (img_addr < 0)
+		return ;
 	img->addr[img_addr] = rgb.b;
 	img->addr[img_addr + 1] = rgb.g;
 	img->addr[img_addr + 2] = rgb.r;

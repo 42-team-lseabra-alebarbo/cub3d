@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw_textures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:47:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/17 12:01:36 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/18 01:28:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ static void	ft_put_texture(t_data *dt, t_img *img)
 		+ dt->cam.line_height * img->line_length / 2;
 	dt->line.tex_y = ((scale * img->height) / dt->cam.line_height)
 		/ img->line_length;
-	screen_addr = dt->line.tex_y * img->line_length + dt->line.tex_x
-		* (img->bits_per_pixel / 8);
-	if (screen_addr < 0)
-		return ;
-	img_addr = dt->line.y
+	screen_addr = dt->line.y
 		* dt->graphics.game_image.line_length + dt->line.x
 		* (dt->graphics.game_image.bits_per_pixel / 8);
-	dt->graphics.game_image.addr[img_addr] = img->addr[screen_addr];
-	dt->graphics.game_image.addr[img_addr + 1] = img->addr[screen_addr + 1];
-	dt->graphics.game_image.addr[img_addr + 2] = img->addr[screen_addr + 2];
+	img_addr = dt->line.tex_y * img->line_length + dt->line.tex_x
+		* (img->bits_per_pixel / 8);
+	if (screen_addr < 0 || img_addr < 0)
+		return ;
+	dt->graphics.game_image.addr[screen_addr] = img->addr[img_addr];
+	dt->graphics.game_image.addr[screen_addr + 1] = img->addr[img_addr + 1];
+	dt->graphics.game_image.addr[screen_addr + 2] = img->addr[img_addr + 2];
 }
 
 static void	ft_texture_cont(t_data *dt, t_img *img)
