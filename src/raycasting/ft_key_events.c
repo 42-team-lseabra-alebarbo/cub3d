@@ -6,11 +6,19 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:05:29 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/20 15:43:47 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/20 19:34:24 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
+
+static void	ft_pause_event(t_data *dt)
+{
+	dt->control.pause = ~dt->control.pause;
+	if (dt->control.pause)
+		mlx_string_put(dt->graphics.mlx, dt->graphics.window,
+			(WIN_WIDTH / 2) - 10, WIN_HEIGHT / 2, 0xFF0000, "GAME PAUSED");
+}
 
 void	ft_events(t_data *dt)
 {
@@ -60,7 +68,7 @@ int	ft_key_press(int keycode, void *param)
 	if (keycode == KEY_ESC)
 		ft_close_program(dt);
 	if (keycode == P_KEY)
-		dt->control.pause = ~dt->control.pause;
+		ft_pause_event(dt);
 	if (dt->control.pause)
 		return (SUCCESS);
 	if (keycode == LEFT_ARROW)
