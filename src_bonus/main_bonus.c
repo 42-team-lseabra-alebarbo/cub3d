@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/15 14:29:52 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/17 19:32:52 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static t_result	ft_validate_macros(void)
 {
@@ -38,12 +39,23 @@ static t_result	ft_validate_macros(void)
 		return (SUCCESS);
 }
 
+static t_result	ft_validate_macros_bonus(void)
+{
+	if (MINIMAP_SCALE < 6 || MINIMAP_SCALE > 16)
+	{
+		ft_put_error(NULL, "MINIMAP_SCALE", "macro must be in range (6-16)");
+		return (FAILURE);
+	}
+	return (SUCCESS);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_data		dt;
 
 	dt = (t_data){};
 	if (ft_validate_macros() != SUCCESS
+		|| ft_validate_macros_bonus() != SUCCESS
 		|| ft_validate_arg(argc, argv) != SUCCESS
 		|| ft_parse(&dt, argv[1]) != SUCCESS)
 	{
@@ -55,6 +67,6 @@ int	main(int argc, char *argv[])
 	ft_texture_to_img(&dt);
 	ft_init_player(&dt);
 	mlx_mouse_hide(dt.graphics.mlx, dt.graphics.window);
-	ft_game_loop(&dt);
+	ft_game_loop_bonus(&dt);
 	return (EXIT_SUCCESS);
 }
