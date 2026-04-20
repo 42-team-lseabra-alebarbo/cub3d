@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/20 15:32:41 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/20 23:08:44 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@
 # define ERR_INV_C			"invalid character detected"
 # define ERR_MAP_OPEN		"map has invalid or unreachable areas"
 # define ERR_WIN_WIDTH		"WIN_WIDTH must be between "
+# define ERR_TEX_FOUND		"texture not found"
 
 #endif
