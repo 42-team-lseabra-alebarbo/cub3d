@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/20 18:49:27 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/20 21:31:53 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ static t_result	ft_validate_macros(void)
 
 static t_result	ft_validate_macros_bonus(void)
 {
-	if (MINIMAP_SCALE < 6 || MINIMAP_SCALE > 16)
+	if (MINIMAP_SCALE < 0.1 || MINIMAP_SCALE > 0.4)
 	{
-		ft_put_error(NULL, "MINIMAP_SCALE", "macro must be in range (6-16)");
+		ft_put_error(NULL, "MINIMAP_SCALE", "macro must be in range (0.1-0.4)");
 		return (FAILURE);
 	}
 	return (SUCCESS);
