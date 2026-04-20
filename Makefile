@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/17 19:44:20 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/20 20:10:56 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,11 +73,14 @@ SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \
 		main.c \
 )
 
-SRC_BONUS = $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_BONUS_PATH)/, \
+SRC_BONUS = \
+	$(PARSING_SRC) \
+	$(filter-out $(RAYCASTING_PATH)/ft_gameloop.c, $(RAYCASTING_SRC)) \
+	$(addprefix $(SRC_BONUS_PATH)/, \
 		main_bonus.c \
 		ft_game_loop_bonus.c \
 		ft_render_minimap.c \
-)
+	)
 
 # Object files
 OBJ			= $(addprefix $(BUILD_PATH)/, $(notdir $(SRC:.c=.o)))
@@ -100,6 +103,8 @@ ECHO	= echo
 #==============================================================================#
 #                                    RULES                                     #
 #==============================================================================#
+
+.PHONY: all bonus clean fclean re rebonus
 
 all: $(NAME)
 
