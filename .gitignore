@@ -56,5 +56,8 @@ dkms.conf
 # debug information files
 *.dwo
 
+# vscode
+.vscode/
+
 # minilibx
 minilibx-linux
