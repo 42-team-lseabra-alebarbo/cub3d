@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:21:38 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/17 19:32:52 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/20 18:49:27 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int	main(int argc, char *argv[])
 	ft_game_image(&dt);
 	ft_texture_to_img(&dt);
 	ft_init_player(&dt);
-	mlx_mouse_hide(dt.graphics.mlx, dt.graphics.window);
 	ft_game_loop_bonus(&dt);
 	return (EXIT_SUCCESS);
 }
