@@ -35,8 +35,6 @@
 *.i*86
 *.x86_64
 *.hex
-cub3d
-cub3d_bonus
 
 # Debug files
 *.dSYM/
@@ -56,8 +54,9 @@ dkms.conf
 # debug information files
 *.dwo
 
-# vscode
+# cub3d
+.build/
 .vscode/
-
-# minilibx
+cub3d
+cub3d_bonus
 minilibx-linux
