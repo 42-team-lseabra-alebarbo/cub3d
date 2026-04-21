@@ -25,10 +25,10 @@ The player's movement are done by simple linear transformations, checking if the
 The program accepts 1 argument, the path to a configuration file:
 * The file extension must be `.cub`.
 * The file must contain 4 elements representing the textures for each lateral face of the cube, in the following format:
-<pre><b>**NO ./path_to_texture**
-**SO ./path_to_texture**
-**EA ./path_to_texture**
-**WE ./path_to_texture**</b></pre>
+<pre><b>NO ./path_to_texture
+SO ./path_to_texture
+EA ./path_to_texture
+WE ./path_to_texture</b></pre>
 * The file must contain 2 elements representing the ceiling and floor RGB colors in range [0,255], in the following format (the values are just an example):
 <pre><b>C  0,255,255
 F  255,0,50</b></pre>
