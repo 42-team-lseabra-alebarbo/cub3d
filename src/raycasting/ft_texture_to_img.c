@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_texture_to_img.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:59:22 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/14 13:50:07 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/20 23:09:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ static void	ft_apply_texture(t_data *dt, t_texture_id id)
 			&dt->graphics.textures[id].width,
 			&dt->graphics.textures[id].height);
 	if (!dt->graphics.textures[id].img)
+	{
+		ft_put_error(NULL, dt->textures[id].filename, ERR_TEX_FOUND);
 		ft_close_program(dt);
+	}
 	dt->graphics.textures[id].addr
 		= mlx_get_data_addr(dt->graphics.textures[id].img,
 			&dt->graphics.textures[id].bits_per_pixel,

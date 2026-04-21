@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/15 22:51:44 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/20 15:43:37 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_init_player(t_data *dt)
 	dt->player.pos_x = dt->map.player_spawn.col;
 	dt->player.pos_y = dt->map.player_spawn.row;
 	dt->player.cam_height = 1.0;
+	dt->control.pause = 0;
 	ft_set_camera(dt);
 }
 

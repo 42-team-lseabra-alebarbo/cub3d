@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/14 19:14:17 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/20 23:08:44 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@
 # define D_KEY			0x64
 # define LEFT_ARROW		0xff51
 # define RIGHT_ARROW	0xff53
+# define P_KEY			0x70
 
 // Errors
 # define ERR_PREFIX			"Error"
@@ -79,5 +80,6 @@
 # define ERR_INV_C			"invalid character detected"
 # define ERR_MAP_OPEN		"map has invalid or unreachable areas"
 # define ERR_WIN_WIDTH		"WIN_WIDTH must be between "
+# define ERR_TEX_FOUND		"texture not found"
 
 #endif

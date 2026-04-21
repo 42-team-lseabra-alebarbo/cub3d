@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:47:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/15 21:46:43 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/18 01:28:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,24 @@
 static void	ft_put_texture(t_data *dt, t_img *img)
 {
 	int		scale;
+	int		screen_addr;
+	int		img_addr;
 
 	scale = dt->line.y * img->line_length
 		- (WIN_HEIGHT * dt->player.cam_height) * img->line_length / 2
 		+ dt->cam.line_height * img->line_length / 2;
 	dt->line.tex_y = ((scale * img->height) / dt->cam.line_height)
 		/ img->line_length;
-	if (dt->line.tex_y * img->line_length + dt->line.tex_x
-		* (img->bits_per_pixel / 8) < 0)
+	screen_addr = dt->line.y
+		* dt->graphics.game_image.line_length + dt->line.x
+		* (dt->graphics.game_image.bits_per_pixel / 8);
+	img_addr = dt->line.tex_y * img->line_length + dt->line.tex_x
+		* (img->bits_per_pixel / 8);
+	if (screen_addr < 0 || img_addr < 0)
 		return ;
-	dt->graphics.game_image.addr[dt->line.y
-		* dt->graphics.game_image.line_length + dt->line.x
-		* (dt->graphics.game_image.bits_per_pixel / 8)]
-		= img->addr[dt->line.tex_y * img->line_length
-		+ dt->line.tex_x * (img->bits_per_pixel / 8)];
-	dt->graphics.game_image.addr[dt->line.y
-		* dt->graphics.game_image.line_length + dt->line.x
-		* (dt->graphics.game_image.bits_per_pixel / 8) + 1]
-		= img->addr[dt->line.tex_y * img->line_length
-		+ dt->line.tex_x * (img->bits_per_pixel / 8) + 1];
-	dt->graphics.game_image.addr[dt->line.y
-		* dt->graphics.game_image.line_length + dt->line.x
-		* (dt->graphics.game_image.bits_per_pixel / 8) + 2]
-		= img->addr[dt->line.tex_y * img->line_length
-		+ dt->line.tex_x * (img->bits_per_pixel / 8) + 2];
+	dt->graphics.game_image.addr[screen_addr] = img->addr[img_addr];
+	dt->graphics.game_image.addr[screen_addr + 1] = img->addr[img_addr + 1];
+	dt->graphics.game_image.addr[screen_addr + 2] = img->addr[img_addr + 2];
 }
 
 static void	ft_texture_cont(t_data *dt, t_img *img)
@@ -70,21 +64,9 @@ static void	ft_texture_line(t_data *dt, double wall_x)
 {
 	t_img	*img;
 
-	img = 0;
-	if (dt->cam.side == NO)
-		img = &dt->graphics.textures[NO];
-	else if (dt->cam.side == SO)
-		img = &dt->graphics.textures[SO];
-	else if (dt->cam.side == EA)
-		img = &dt->graphics.textures[EA];
-	else if (dt->cam.side == WE)
-		img = &dt->graphics.textures[WE];
+	img = &dt->graphics.textures[dt->cam.side];
 	dt->line.tex_x = (int)(wall_x * (double)img->width);
-	if ((dt->cam.side == EA || dt->cam.side == WE) && dt->cam.ray_dir_x > 0)
-		dt->line.tex_x = img->width - dt->line.tex_x - 1;
-	else if ((dt->cam.side == NO || dt->cam.side == SO)
-		&& dt->cam.ray_dir_y < 0)
-		dt->line.tex_x = img->width - dt->line.tex_x - 1;
+	dt->line.tex_x = img->width - dt->line.tex_x - 1;
 	dt->line.y_0 = dt->cam.draw_start;
 	dt->line.y_1 = dt->cam.draw_end;
 	ft_texture_cont(dt, img);
