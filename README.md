@@ -57,7 +57,7 @@ F  255,0,50</b></pre>
 11110111 1110101 101111010001
 11111111 1111111 111111111111</b></pre>
 
-* If any misconfiguration of any kind is encountered in the file, the program will exit, returning an message expliciting the error.
+* If any misconfiguration of any kind is encountered in the file, the program will exit, returning a message expliciting the error.
 
 ## Resources
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)  
