@@ -13,8 +13,11 @@ typedef	struct s_minimap
 	int		offset_y;
 	int		grid_x;
 	int		grid_y;
-	int		block_size;
+	double	block_size;
 	int		center_x;
 	int		center_y;
+	t_rgb	color_floor;
+	t_rgb	color_block;
+	t_rgb	color_player;
 }	t_minimap;
 #endif
