@@ -6,66 +6,25 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 22:00:06 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 11:15:51 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:15:00 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "cub3d_bonus.h"
 
-static void	ft_put_pixel_minimap(t_data *dt, int x, int y, t_rgb rgb)
-{
-	t_img	*img;
-	int		pixel_addr;
-
-	img = &dt->graphics.game_image;
-	if (!dt || x < 0 || x > dt->graphics.game_image.width
-		|| y < 0 || y > dt->graphics.game_image.height)
-	{
-		return ;
-	}
-	pixel_addr = y * img->line_length + x * (img->bits_per_pixel / 8);
-	img->addr[pixel_addr] = rgb.b;
-	img->addr[pixel_addr + 1] = rgb.g;
-	img->addr[pixel_addr + 2] = rgb.r;
-}
-
-static void	ft_render_pixel(t_data *dt, t_minimap *mm)
-{
-	char	block;
-
-	if (!dt || !mm)
-		return ;
-	if (mm->x < mm->offset_x || mm->x > mm->width + mm->offset_x
-		|| mm->y < mm->offset_y || mm->y >= mm->height + mm->offset_y)
-		return ;
-	mm->grid_x
-		= dt->player.pos_x + ((double)(mm->x - mm->center_x) / mm->block_size);
-	mm->grid_y
-		= dt->player.pos_y + ((double)(mm->y - mm->center_y) / mm->block_size);
-	if (mm->grid_x < 0 || mm->grid_x > dt->map.max_line_len
-		|| mm->grid_y < 0 || mm->grid_y > dt->map.row_count)
-		return ;
-	block = dt->map.grid[mm->grid_y][mm->grid_x];
-	if (block == '1')
-		ft_put_pixel_minimap(dt, mm->x, mm->y, mm->color_block);
-	else if (block == '0' || block == 'N' || block == 'S'
-		|| block == 'E' || block == 'W')
-		ft_put_pixel_minimap(dt, mm->x, mm->y, mm->color_floor);
-}
-
 static void	ft_render_mm_line(t_data *dt, t_minimap *mm)
 {
 	mm->y = mm->center_y;
 	while (mm->y >= mm->offset_y)
 	{
-		ft_render_pixel(dt, mm);
+		ft_render_mm_pixel(dt, mm);
 		mm->y--;
 	}
 	mm->y = mm->center_y + 1;
 	while (mm->y <= mm->height + mm->offset_y)
 	{
-		ft_render_pixel(dt, mm);
+		ft_render_mm_pixel(dt, mm);
 		mm->y++;
 	}
 }
