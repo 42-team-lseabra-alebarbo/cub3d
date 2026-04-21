@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
+#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/21 12:23:22 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/21 20:15:27 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ RESET	= \033[0m
 #==============================================================================#
 
 #Names
-NAME		= cub3d
-NAME_BONUS	= cub3d_bonus
+NAME		= cub3D
+NAME_BONUS	= cub3D_bonus
 PROJ_NAME	= CUB3D
 MLX_NAME	= $(MLX_PATH)/libmlx.a
 

@@ -1,9 +1,9 @@
 *This project has been created as part of the 42 curriculum by alebarbo, lseabra-.*
 
-# cub3d
+# cub3D
 
 ## Description
-**cub3d** is a project designed to improve our graphics understanding using the **MiniLibX** library. The objective is to create a first-person closed-maze game, parse a map, show textures on the screen and compute the player's movement.
+**cub3D** is a project designed to improve our graphics understanding using the **MiniLibX** library. The objective is to create a first-person closed-maze game, parse a map, show textures on the screen and compute the player's movement.
 
 The map parsing is done by verifying the order of instructions inside the map file. The first set of instructions must contain a relative path to a texture file for each lateral face of a cube (North, South, East and West) and 2 sets of **RGB** colors for the ceiling and floor.
 
@@ -21,8 +21,8 @@ The player's movement are done by simple linear transformations, checking if the
 * For bonus functionalities, run `make bonus` on the root folder of the project.
 
 **Execution**
-* Run `./cub3d` on the root folder of the project after installation.
-* For bonus functionalities, run `./cub3d_bonus` on the root folder of the project after installation.
+* Run `./cub3D` on the root folder of the project after installation.
+* For bonus functionalities, run `./cub3D_bonus` on the root folder of the project after installation.
 
 The program accepts 1 argument, the path to a configuration file:
 * The file extension must be `.cub`.

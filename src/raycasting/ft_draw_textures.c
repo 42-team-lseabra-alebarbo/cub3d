@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:47:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/18 01:28:41 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/21 20:45:56 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ void	ft_draw_textures(t_data *dt)
 	if (dt->cam.side == EA || dt->cam.side == WE)
 		wall_x = dt->player.pos_y + dt->cam.perp_dist * dt->cam.ray_dir_y;
 	else
-		wall_x = dt->player.pos_x + dt->cam.perp_dist * dt->cam.ray_dir_x;
+		wall_x = dt->player.pos_x + (dt->cam.perp_dist * dt->cam.ray_dir_x);
+	if (dt->cam.side == WE || dt->cam.side == SO)
+		wall_x *= -1;
 	wall_x -= floor(wall_x);
 	dt->line.x = dt->cam.curr_x;
 	if (dt->map.grid[dt->cam.map_y][dt->cam.map_x] == '1')
