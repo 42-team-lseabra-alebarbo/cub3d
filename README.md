@@ -18,9 +18,11 @@ The player's movement are done by simple linear transformations, checking if the
 ## Instructions
 **Installation**
 * Run `make` on the root folder of the project.
+* For bonus functionalities, run `make bonus` on the root folder of the project.
 
 **Execution**
-* Run `cub3d` on the root folder of the project after installation.
+* Run `./cub3d` on the root folder of the project after installation.
+* For bonus functionalities, run `./cub3d_bonus` on the root folder of the project after installation.
 
 The program accepts 1 argument, the path to a configuration file:
 * The file extension must be `.cub`.
@@ -58,6 +60,16 @@ F  255,0,50</b></pre>
 11111111 1111111 111111111111</b></pre>
 
 * If any misconfiguration of any kind is encountered in the file, the program will exit, returning a message expliciting the error.
+
+**Player Controls**
+* Move Forward - W
+* Move Backwards - S
+* Move Left - A
+* Move Right - D
+* Turn Left - ←
+* Turn Right - →
+* Turn Character - Mouse movement
+* Pause Game - P
 
 ## Resources
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)  
