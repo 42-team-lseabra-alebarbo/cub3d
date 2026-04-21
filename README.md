@@ -70,6 +70,7 @@ F  255,0,50</b></pre>
 * Turn Right - →
 * Turn Character - Mouse movement
 * Pause Game - P
+* Exit Game - ESC
 
 ## Resources
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)  
