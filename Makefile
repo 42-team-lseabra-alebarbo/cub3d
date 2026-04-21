@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
+#    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/13 22:30:43 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/16 21:38:17 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ RESET	= \033[0m
 
 #Names
 NAME		= cub3d
+NAME_BONUS	= cub3d_bonus
 PROJ_NAME	= CUB3D
 MLX_NAME	= $(MLX_PATH)/libmlx.a
 
@@ -36,9 +37,10 @@ MLX_PATH		= minilibx-linux
 SRC_PATH		= src
 PARSING_PATH	= $(SRC_PATH)/parsing
 RAYCASTING_PATH	= $(SRC_PATH)/raycasting
+SRC_BONUS_PATH	= src_bonus
+INC_BONUS_PATH	= include_bonus
 
 # Source files
-
 PARSING_SRC	= $(addprefix $(PARSING_PATH)/, \
 	ft_get_next_line.c \
 	ft_init_surface.c \
@@ -71,15 +73,21 @@ SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \
 		main.c \
 )
 
+SRC_BONUS = $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_BONUS_PATH)/, \
+		main_bonus.c \
+)
+
 # Object files
-OBJ	= $(addprefix $(BUILD_PATH)/, $(notdir $(SRC:.c=.o)))
+OBJ			= $(addprefix $(BUILD_PATH)/, $(notdir $(SRC:.c=.o)))
+OBJ_BONUS	= $(addprefix $(BUILD_PATH)/, $(notdir $(SRC_BONUS:.c=.o)))
 
 #Compiler and Flags
-CC		= cc
-C_FLAGS	= -Wall -Wextra -Werror -g
-INC		= -I$(INC_PATH) -I$(MLX_PATH)
-LIB		= -lmlx -Lminilibx-linux -L/usr/lib -lX11 -lXext -lm
-ASAN	= -fsanitize=address
+CC			= cc
+C_FLAGS		= -Wall -Wextra -Werror -g
+INC			= -I$(INC_PATH) -I$(MLX_PATH)
+INC_BONUS	= $(INC) -I$(INC_BONUS_PATH)
+LIB			= -lmlx -Lminilibx-linux -L/usr/lib -lX11 -lXext -lm
+ASAN		= -fsanitize=address
 
 #Utility Commands
 MKDIR	= mkdir -p
@@ -113,12 +121,37 @@ $(BUILD_PATH):
 $(MLX_NAME):
 	@$(MAKE) -s -C $(MLX_PATH)
 
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJ_BONUS) $(MLX_NAME)
+	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $@
+	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME_BONUS)"
+
+$(BUILD_PATH)/%.o: $(SRC_BONUS_PATH)/%.c | $(BUILD_PATH)
+	@$(CC) $(C_FLAGS) $(INC) -c $< -o $@
+
 clean:
-	@$(RMDIR) $(BUILD_PATH)
-	@$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) directory removed: $(BUILD_PATH)"
+	@if [ -d $(BUILD_PATH) ]; then \
+		$(RMDIR) $(BUILD_PATH); \
+		$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) directory removed: $(BUILD_PATH)"; \
+	else \
+		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) build directory already clean"; \
+	fi
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME)"
+	@if [ ! -f $(NAME) ] && [ ! -f $(NAME_BONUS) ]; then \
+		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) executables already clean"; \
+	else \
+		if [ -f $(NAME) ]; then \
+			$(RM) $(NAME); \
+			$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME)"; \
+		fi; \
+		if [ -f $(NAME_BONUS) ]; then \
+			$(RM) $(NAME_BONUS); \
+			$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME_BONUS)"; \
+		fi; \
+	fi
 
 re: fclean all
+
+rebonus: fclean bonus
