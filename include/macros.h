@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/20 23:08:44 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:45:42 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@
 # define ERR_MAP_OPEN		"map has invalid or unreachable areas"
 # define ERR_WIN_WIDTH		"WIN_WIDTH must be between "
 # define ERR_TEX_FOUND		"texture not found"
+# define ERR_EMPTY_LINE		"empty line detected inside map"
+# define ERR_MISS_MAP		"missing map grid"
 
 #endif
