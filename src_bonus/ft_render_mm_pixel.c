@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:15:12 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 12:25:26 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:00:17 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ft_put_pixel_minimap(t_data *dt, int x, int y, t_rgb rgb)
 
 static t_result	ft_get_grid_pos(t_data *dt, t_minimap *mm)
 {
-	mm->grid_x = dt->player.pos_x;
-	mm->grid_x += (double)(mm->x - mm->center_x) / (double)mm->block_size;
-	mm->grid_y = dt->player.pos_y;
-	mm->grid_y += (double)(mm->y - mm->center_y) / (double)mm->block_size;
+	mm->grid_x = dt->player.pos_x
+		+ (double)(mm->x - mm->center_x) / (double)mm->block_size;
+	mm->grid_y = dt->player.pos_y
+		+ (double)(mm->y - mm->center_y) / (double)mm->block_size;
 	if (mm->grid_x < 0 || mm->grid_x > dt->map.max_line_len
 		|| mm->grid_y < 0 || mm->grid_y > dt->map.row_count)
 	{

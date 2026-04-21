@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 22:00:06 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 12:15:00 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:56:56 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,18 @@ static void	ft_init_minimap(t_minimap *mm)
 
 static void	ft_render_player(t_data *dt, t_minimap *mm)
 {
+	int		side_len;
 	int		x;
 	int		y;
 
-	x = mm->center_x - (mm->block_size / 2);
-	while (x <= mm->center_x + (mm->block_size / 2))
+	side_len = mm->block_size / 4;
+	x = mm->center_x - side_len;
+	while (x <= mm->center_x + side_len)
 	{
-		y = mm->center_y - 2;
-		while (y <= mm->center_y + 2)
+		y = mm->center_y - side_len;
+		while (y <= mm->center_y + side_len)
 		{
-			ft_put_pixel_minimap(dt, x, y, mm->color_player);
+			ft_put_pixel_minimap(dt, (int)x, (int)y, mm->color_player);
 			y++;
 		}
 		x++;
