@@ -20,9 +20,9 @@ The player's movement are done by simple linear transformations, checking if the
 * Run `make` on the root folder of the project.
 
 **Execution**
-* Run `cub3d` on the philo folder of the project after installation.
+* Run `cub3d` on the root folder of the project after installation.
 
-The program accepts 1 argument, a path to the map:
+The program accepts 1 argument, the path to a configuration file:
 * The file extension must be `.cub`.
 * The file must contain 4 elements representing the textures for each lateral face of the cube, in the following format:
 <pre><b>**NO ./path_to_texture**
