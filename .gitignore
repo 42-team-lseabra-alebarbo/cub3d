@@ -57,6 +57,7 @@ dkms.conf
 # cub3d
 .build/
 .vscode/
-cub3d
-cub3d_bonus
+cub3D
+.mark
+.mark_bonus
 minilibx-linux
