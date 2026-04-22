@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_rgb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 10:29:46 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/02 23:26:47 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/22 11:13:05 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ t_result	ft_parse_rgb(t_surface *surface)
 	i++;
 	if (ft_atouc_rgb(surface, &surface->rgb.b, &i) != SUCCESS)
 		return (FAILURE);
+	if (surface->rgb_str[i])
+		return (ft_p_err_ret(NULL, surface->rgb_str, ERR_INV_RGB));
 	return (SUCCESS);
 }
