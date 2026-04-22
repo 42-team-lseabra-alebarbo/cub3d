@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
+#    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/21 20:15:27 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/22 13:58:22 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,15 @@ RESET	= \033[0m
 
 #Names
 NAME		= cub3D
-NAME_BONUS	= cub3D_bonus
 PROJ_NAME	= CUB3D
 MLX_NAME	= $(MLX_PATH)/libmlx.a
 
+#Marks
+MARK		= .mark
+MARK_BONUS	= .lalala
+
 #Paths
-BUILD_PATH		= build
+BUILD_PATH		= .build
 INC_PATH		= include
 MLX_PATH		= minilibx-linux
 SRC_PATH		= src
@@ -100,6 +103,7 @@ MKDIR	= mkdir -p
 RM		= rm -f
 RMDIR	= rm -rf
 ECHO	= echo
+TC	= touch
 
 #==============================================================================#
 #                                    RULES                                     #
@@ -107,10 +111,12 @@ ECHO	= echo
 
 .PHONY: all bonus clean fclean re rebonus
 
-all: $(NAME)
+all: $(MARK)
 
-$(NAME): $(OBJ) $(MLX_NAME)
-	@$(CC) $(C_FLAGS) $(ASAN) $(INC) $(OBJ) $(LIB) -o $@
+$(MARK): $(OBJ) $(MLX_NAME)
+	@$(RM) $(MARK_BONUS)
+	@$(TC) $(MARK)
+	@$(CC) $(C_FLAGS) $(ASAN) $(INC) $(OBJ) $(LIB) -o $(NAME)
 	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME)"
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.c | $(BUILD_PATH)
@@ -124,15 +130,17 @@ $(BUILD_PATH)/%.o: $(RAYCASTING_PATH)/%.c | $(BUILD_PATH)
 
 $(BUILD_PATH):
 	@$(MKDIR) $(BUILD_PATH)
-	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) directory created: $(BUILD_PATH)"
+	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) directory created: $(BUILD_PATH)/"
 
 $(MLX_NAME):
 	@$(MAKE) -s -C $(MLX_PATH)
 
-bonus: $(NAME_BONUS)
+bonus: $(MARK_BONUS)
 
-$(NAME_BONUS): $(OBJ_BONUS) $(MLX_NAME)
-	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $@ -g
+$(MARK_BONUS): $(OBJ_BONUS) $(MLX_NAME)
+	@$(RM) $(MARK);
+	@$(TC) $(MARK_BONUS)
+	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $(NAME) -g
 	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME_BONUS)"
 
 $(BUILD_PATH)/%.o: $(SRC_BONUS_PATH)/%.c | $(BUILD_PATH)
@@ -141,23 +149,19 @@ $(BUILD_PATH)/%.o: $(SRC_BONUS_PATH)/%.c | $(BUILD_PATH)
 clean:
 	@if [ -d $(BUILD_PATH) ]; then \
 		$(RMDIR) $(BUILD_PATH); \
-		$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) directory removed: $(BUILD_PATH)"; \
+		$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) directory removed: $(BUILD_PATH)/"; \
 	else \
-		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) build directory already clean"; \
+		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) directory already clean: $(BUILD_PATH)/"; \
 	fi
 
 fclean: clean
-	@if [ ! -f $(NAME) ] && [ ! -f $(NAME_BONUS) ]; then \
-		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) executables already clean"; \
+	@if [ ! -f $(NAME) ]; then \
+		$(ECHO) "$(YELLOW)[$(PROJ_NAME)]:$(RESET) executable already clean: $(NAME)"; \
 	else \
-		if [ -f $(NAME) ]; then \
-			$(RM) $(NAME); \
-			$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME)"; \
-		fi; \
-		if [ -f $(NAME_BONUS) ]; then \
-			$(RM) $(NAME_BONUS); \
-			$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME_BONUS)"; \
-		fi; \
+		$(RM) $(NAME); \
+		$(RM) $(MARK); \
+		$(RM) $(MARK_BONUS); \
+		$(ECHO) "$(RED)[$(PROJ_NAME)]:$(RESET) executable removed: $(NAME)"; \
 	fi
 
 re: fclean all
