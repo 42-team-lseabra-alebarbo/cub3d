@@ -73,7 +73,7 @@ F  255,0,50</b></pre>
 * Exit Game - ESC
 
 ## Technical Choices
-**Static Memory Allocation** for simpler memory management and to prevent unexpected memory leaks in sudden interrupts, such as the SIGINT signal. The use of **Dynamic Memory Allocation** in specific error return messages ​​with the intention of providing a better user experience.
+**Static Memory Allocation** in most of the project is for simpler memory management and to prevent unexpected memory leaks in sudden interrupts, such as the SIGINT signal. The use of **Dynamic Memory Allocation** in specific error return messages has the intention of providing a better user experience.
 
 ## Resources
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)  
