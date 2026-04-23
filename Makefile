@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/22 13:58:22 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/23 16:38:24 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ MLX_NAME	= $(MLX_PATH)/libmlx.a
 
 #Marks
 MARK		= .mark
-MARK_BONUS	= .lalala
+MARK_BONUS	= .mark_bonus
 
 #Paths
 BUILD_PATH		= .build
