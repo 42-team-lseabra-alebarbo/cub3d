@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/23 16:38:24 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/23 16:41:17 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,15 @@ MARK_BONUS	= .mark_bonus
 
 #Paths
 BUILD_PATH		= .build
-INC_PATH		= include
-MLX_PATH		= minilibx-linux
-SRC_PATH		= src
+MANDATORY_PATH	= mandatory
+INC_PATH		= $(MANDATORY_PATH)/include
+SRC_PATH		= $(MANDATORY_PATH)/src
 PARSING_PATH	= $(SRC_PATH)/parsing
 RAYCASTING_PATH	= $(SRC_PATH)/raycasting
-SRC_BONUS_PATH	= src_bonus
-INC_BONUS_PATH	= include_bonus
+BONUS_PATH		= bonus
+SRC_BONUS_PATH	= $(BONUS_PATH)/src_bonus
+INC_BONUS_PATH	= $(BONUS_PATH)/include_bonus
+MLX_PATH		= minilibx-linux
 
 # Source files
 PARSING_SRC	= $(addprefix $(PARSING_PATH)/, \
