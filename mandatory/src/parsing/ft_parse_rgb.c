@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 10:29:46 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/22 11:13:05 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/27 15:03:16 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ static t_result	ft_atouc_rgb(t_surface *surf, t_u_char *component, size_t *i)
 			return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB));
 		(*i)++;
 	}
-	if (surf->rgb_str[*i] != ',' && surf->rgb_str[*i] != '\0')
-		return (ft_p_err_ret(NULL, surf->rgb_str, ERR_INV_RGB));
 	*component = (t_u_char)(res);
 	return (SUCCESS);
 }
@@ -58,12 +56,19 @@ t_result	ft_parse_rgb(t_surface *surface)
 	i = 0;
 	if (ft_atouc_rgb(surface, &surface->rgb.r, &i) != SUCCESS)
 		return (FAILURE);
+	else if (surface->rgb_str[i] != ',' && surface->rgb_str[i] != '\0')
+		return (ft_p_err_ret(NULL, surface->rgb_str, ERR_INV_RGB));
 	i++;
 	if (ft_atouc_rgb(surface, &surface->rgb.g, &i) != SUCCESS)
 		return (FAILURE);
+	else if (surface->rgb_str[i] != ',' && surface->rgb_str[i] != '\0')
+		return (ft_p_err_ret(NULL, surface->rgb_str, ERR_INV_RGB));
 	i++;
 	if (ft_atouc_rgb(surface, &surface->rgb.b, &i) != SUCCESS)
 		return (FAILURE);
+	i++;
+	while (ft_is_space(surface->rgb_str[i]))
+		i++;
 	if (surface->rgb_str[i])
 		return (ft_p_err_ret(NULL, surface->rgb_str, ERR_INV_RGB));
 	return (SUCCESS);
