@@ -6,7 +6,7 @@
 /*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 17:55:07 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/03/27 18:33:43 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/27 15:24:30 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_result	ft_flood_fill_check(t_map *map, int row, int col)
 	{
 		return (ft_p_err_ret(NULL, NULL, ERR_MAP_OPEN));
 	}
-	else if (map->grid[row][col] != '0')
+	else if (map->grid[row][col] == '1' || map->grid[row][col] == 'V')
 		return (SUCCESS);
 	map->grid[row][col] = 'V';
 	if (ft_flood_fill_check(map, row - 1, col) != SUCCESS)
