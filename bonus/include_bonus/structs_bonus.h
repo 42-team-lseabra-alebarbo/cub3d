@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:02:10 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 13:03:14 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:10:37 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_minimap
 	int		height;
 	int		offset_x;
 	int		offset_y;
-	int		grid_x;
-	int		grid_y;
+	double	grid_x;
+	double	grid_y;
 	double	block_size;
 	int		center_x;
 	int		center_y;
