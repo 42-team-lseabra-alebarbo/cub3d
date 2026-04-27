@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:39:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/20 15:36:55 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:41:11 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_game_loop(t_data *dt)
 	mlx_hook(dt->graphics.window, 17, 0L, ft_close_program, dt);
 	mlx_hook(dt->graphics.window, 2, 1L << 0, ft_key_press, dt);
 	mlx_hook(dt->graphics.window, 3, 1L << 1, ft_key_release, dt);
-	mlx_hook(dt->graphics.window, 6, 1L << 6, ft_mouse_move, dt);
 	mlx_loop_hook(dt->graphics.mlx, ft_render, dt);
 	mlx_loop(dt->graphics.mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/13 22:30:24 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:40:49 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void		ft_events(t_data *dt);
 int			ft_key_press(int keycode, void *param);
 int			ft_key_release(int keycode, void *param);
 void		ft_init_player(t_data *dt);
-void		ft_init_controls(t_data *dt);
 void		ft_texture_to_img(t_data *dt);
 void		ft_raycaster(t_data *dt);
 void		ft_init_cam(t_data *dt);
@@ -67,6 +66,5 @@ void		ft_move_left(t_data *dt);
 void		ft_move_right(t_data *dt);
 void		ft_move_forward(t_data *dt);
 void		ft_move_backward(t_data *dt);
-int			ft_mouse_move(int x, int y, void *param);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+         #
+#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/23 16:41:17 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/27 17:42:35 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,6 @@ RAYCASTING_SRC	= $(addprefix $(RAYCASTING_PATH)/, \
 	ft_init_game.c \
 	ft_key_events.c \
 	ft_mlx_elements.c \
-	ft_mouse_events.c \
 	ft_move_player.c \
 	ft_raycaster.c \
 	ft_texture_to_img.c \
@@ -80,11 +79,12 @@ SRC	= $(PARSING_SRC) $(RAYCASTING_SRC) $(addprefix $(SRC_PATH)/, \
 
 SRC_BONUS = \
 	$(PARSING_SRC) \
-	$(filter-out $(RAYCASTING_PATH)/ft_gameloop.c, $(RAYCASTING_SRC)) \
+	$(filter-out $(RAYCASTING_PATH)/ft_game_loop.c, $(RAYCASTING_SRC)) \
 	$(addprefix $(SRC_BONUS_PATH)/, \
 		ft_game_loop_bonus.c \
-		ft_render_minimap.c \
-		ft_render_mm_pixel.c \
+		ft_render_minimap_bonus.c \
+		ft_render_mm_pixel_bonus.c \
+		ft_mouse_events_bonus.c \
 		main_bonus.c \
 	)
 
