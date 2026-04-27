@@ -1,0 +1,11 @@
+NO ./wolf_textures/north.xpm
+SO ./wolf_textures/south.xpm
+WE ./wolf_textures/west.xpm
+EA ./wolf_textures/east.xpm
+
+F 120,120,120
+C 90,90,90
+
+ 1 
+1N1
+ 1 

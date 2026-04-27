@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 21:42:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/20 15:43:37 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:52:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static void	ft_set_camera(t_data *dt)
 
 void	ft_init_player(t_data *dt)
 {
-	dt->player.pos_x = dt->map.player_spawn.col;
-	dt->player.pos_y = dt->map.player_spawn.row;
+	dt->player.pos_x = (double)dt->map.player_spawn.col + 0.5;
+	dt->player.pos_y = (double)dt->map.player_spawn.row + 0.5;
 	dt->player.cam_height = 1.0;
 	dt->control.pause = 0;
 	ft_set_camera(dt);
