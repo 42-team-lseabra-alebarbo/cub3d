@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:08:22 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/01 22:40:06 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/28 14:15:26 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	ft_put_error(char *pgm, char *tgt, char *msg)
 		ft_put_str_fd(STDERR_FILENO, ERR_SEP);
 		ft_put_str_fd(STDERR_FILENO, msg);
 	}
-	write(STDERR_FILENO, "\n", 1);
+	if (write(STDERR_FILENO, "\n", 1) == FAILURE)
+		perror(NULL);
 }
 
 int	ft_p_err_ret(char *pgm, char *tgt, char *msg)
