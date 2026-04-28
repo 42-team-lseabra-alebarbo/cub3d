@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 11:00:50 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 15:45:42 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:12:12 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@
 # define ERR_MISS_PARAM		"missing parameter"
 # define ERR_MISS_VAR		"missing variable"
 # define ERR_INV_ID			"invalid information identifier"
-# define ERR_NOT_TEXTURE	"argument is not a texture"
+# define ERR_INV_ARG_TEXT	"invalid argument in texture information"
 # define ERR_DUP_ID			"duplicated identifier"
 # define ERR_MISS_FILENAME	"missing filename"
 # define ERR_MISS_RGB_ARG	"RGB not passed"

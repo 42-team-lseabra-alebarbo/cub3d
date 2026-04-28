@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lseabra- <lseabra-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:12:26 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/21 16:10:04 by lseabra-         ###   ########.fr       */
+/*   Updated: 2026/04/28 14:37:31 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static t_bool	ft_is_space_line(char *line)
+t_bool	ft_is_space_line(char *line)
 {
 	size_t	i;
 

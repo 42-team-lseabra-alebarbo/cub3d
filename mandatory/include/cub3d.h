@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:23:52 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/27 17:40:49 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:35:46 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ t_result	ft_get_next_line(int fd, char line[MAX_LINE_SIZE]);
 char		*ft_get_surface_str(t_surface_id id);
 t_result	ft_init_surface(t_data *dt, char *buffer);
 t_bool		ft_is_space(char c);
+size_t		ft_calc_spaces_jump(char *str);
 size_t		ft_calc_id_spaces_jump(char *str);
 t_result	ft_init_texture(t_data *dt, char *buffer);
 t_bool		ft_is_texture(char *buffer);
 t_bool		ft_is_surface(char *buffer);
+t_bool		ft_is_space_line(char *line);
 t_result	ft_parse_map(t_data *dt);
 t_result	ft_parse_rgb(t_surface *surface);
 t_result	ft_parse(t_data *dt, char *filename);

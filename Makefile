@@ -6,7 +6,7 @@
 #    By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/28 14:11:17 by lseabra-         ###   ########.fr        #
+#    Updated: 2026/04/28 15:02:01 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ PARSING_SRC	= $(addprefix $(PARSING_PATH)/, \
 	ft_get_next_line.c \
 	ft_init_surface.c \
 	ft_init_texture.c \
+	ft_is_space.c \
 	ft_parse_map.c \
 	ft_parse_rgb.c \
 	ft_parse.c \

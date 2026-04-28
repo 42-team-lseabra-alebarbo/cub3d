@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:18:59 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/01 22:39:37 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:10:34 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static t_result	ft_handle_inv_id(char *buffer)
 		return (FAILURE);
 	}
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n' && buffer[i] != ' ')
+	while (buffer[i] && buffer[i] != '\n' && !ft_is_space(buffer[i]))
 		i++;
 	id = malloc((i + 1) * sizeof(char));
 	if (!id)
@@ -91,11 +91,12 @@ t_result	ft_parse_information(t_data *dt, char *buffer)
 {
 	if (ft_get_next_line(dt->file_fd, buffer) != SUCCESS)
 		return (FAILURE);
-	while (buffer && buffer[0] == '\n')
+	while (buffer && ft_is_space_line(buffer))
 	{
 		if (ft_get_next_line(dt->file_fd, buffer) != SUCCESS)
 			return (FAILURE);
 	}
+	buffer += ft_calc_spaces_jump(buffer);
 	if (ft_is_texture(buffer) == TRUE)
 		return (ft_init_texture(dt, buffer));
 	else if (ft_is_surface(buffer) == TRUE)

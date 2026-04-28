@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_surface.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:15:23 by lseabra-          #+#    #+#             */
-/*   Updated: 2026/04/01 22:39:15 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:02:42 by lseabra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,12 @@ static t_surface_id	ft_get_surface_id(char *buffer)
 {
 	if (ft_strncmp(buffer, CEILING, ft_strlen(CEILING)) == 0
 		&& buffer[ft_strlen(CEILING)] == ' ')
-	{
 		return (C);
-	}
 	else if (ft_strncmp(buffer, FLOOR, ft_strlen(FLOOR)) == 0
 		&& buffer[ft_strlen(FLOOR)] == ' ')
-	{
 		return (F);
-	}
 	else
-	{
 		return (C);
-	}
 }
 
 char	*ft_get_surface_str(t_surface_id id)
