@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
+#    By: lseabra- <lseabra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/16 17:29:52 by lseabra-          #+#    #+#              #
-#    Updated: 2026/04/27 17:42:35 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/28 14:09:52 by lseabra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,7 +143,7 @@ $(MARK_BONUS): $(OBJ_BONUS) $(MLX_NAME)
 	@$(RM) $(MARK);
 	@$(TC) $(MARK_BONUS)
 	@$(CC) $(C_FLAGS) $(ASAN) $(INC_BONUS) $(OBJ_BONUS) $(LIB) -o $(NAME) -g
-	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME_BONUS)"
+	@$(ECHO) "$(GREEN)[$(PROJ_NAME)]:$(RESET) executable compiled: $(NAME)"
 
 $(BUILD_PATH)/%.o: $(SRC_BONUS_PATH)/%.c | $(BUILD_PATH)
 	@$(CC) $(C_FLAGS) $(INC_BONUS) -c $< -o $@
